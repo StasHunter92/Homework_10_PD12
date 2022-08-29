@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<!-- Return candidate by pk -->
-    <img src='{{ candidate_.picture }}' class="image" height="300px" alt="">
-    <h1>Имя кандидата: {{ candidate_['name'] }}</h1>
-    <div><u><b>Позиция кандидата:</b></u> {{ candidate_['position'] }}</div>
-    <div><u><b>Навыки:</b></u> {{ candidate_['skills'] }}</div>
+<!-- Return candidate by pk -->
+<img src='{{ candidate_.picture }}' class="image" height="300px" alt="">
+<h1>Имя кандидата: {{ candidate_['name'] }}</h1>
+<div><u><b>Позиция кандидата:</b></u> {{ candidate_['position'] }}</div>
+<div><u><b>Навыки:</b></u> {{ candidate_['skills'] }}</div>
 {% endblock %}
