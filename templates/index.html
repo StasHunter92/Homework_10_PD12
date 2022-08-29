@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Список кандидатов</h1>
-    <div>{{ ', '.join(candidate_list) }}</div>
+	<!-- Return all candidates -->
+    <h1><u>Список кандидатов</u></h1>
+    {% for candidate in data %}
+        <div class="flex-item">
+            <h1>Имя кандидата: {{ candidate['name'] }}</h1>
+            <div><u><b>Позиция кандидата:</b></u> {{ candidate['position'] }}</div>
+            <div><u><b>Навыки:</b></u> {{ candidate['skills'] }}</div>
+        </div>
+    {% endfor %}
 {% endblock %}

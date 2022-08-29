@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template
 from functions import utils as u
 
@@ -7,14 +6,14 @@ app = Flask(__name__)  # Flask instance
 
 
 @app.route('/', methods=['GET'])
-def index():  # Main entry point
-	candidate_list = u.get_all(data)
-	return render_template('index.html', title='Candidates',
-							candidate_list=candidate_list)
+def index():
+	"""Main entry point"""
+	return render_template('index.html', title='Candidates', data=data)
 
 
 @app.route('/candidate/<int:pk>', methods=['GET'])
-def candidate(pk):  # Page with candidate information
+def candidate(pk):
+	"""Page with candidate information"""
 	candidate_ = u.get_by_pk(pk, data)
 	if candidate_ is not None:
 		return render_template('candidate.html', title=candidate_['name'],
@@ -24,7 +23,8 @@ def candidate(pk):  # Page with candidate information
 
 
 @app.route('/skills/<skill_name>', methods=['GET'])
-def skills(skill_name):  # Page with skills information
+def skills(skill_name):
+	"""Page with skill information"""
 	candidate_list = u.get_by_skill(skill_name, data)
 	if candidate_list:
 		return render_template('skills.html', candidate_list=candidate_list,
@@ -35,10 +35,11 @@ def skills(skill_name):  # Page with skills information
 
 @app.errorhandler(404)
 def error_404(error):
+	"""Page 404 error"""
 	return render_template('error_404.html', title='Oops!'), 404
 
 
-data = u.load_candidates(FILE)
+data = u.load_json(FILE)
 
 if __name__ == '__main__':
 	app.run(debug=True)
