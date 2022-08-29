@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <img src='{{ candidate_.picture }}' class="image" height="300px">
+    <img src='{{ candidate_.picture }}' class="image" height="300px" alt="">
     <h1>Имя кандидата - {{ candidate_['name'] }}</h1>
     <div>Позиция кандидата - {{ candidate_['position'] }}</div>
     <div>Навыки через запятую - {{ candidate_['skills'] }}</div>
