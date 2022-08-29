@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Список кандидатов</h1>
+    <div>{{ ', '.join(candidate_list) }}</div>
+{% endblock %}
