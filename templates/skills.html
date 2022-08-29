@@ -5,9 +5,9 @@
     <div class="flex-content">
     {% for candidate in candidate_list %}
         <div class="flex-item">
-            <h1>Имя кандидата - {{ candidate.name }}</h1>
-            <div><u><b>Позиция кандидата</b></u> - {{ candidate.position }}</div>
-            <div><u><b>Навыки:</b></u> {{ candidate.skills }}</div>
+            <h1>Имя кандидата - {{ candidate['name'] }}</h1>
+            <div><u><b>Позиция кандидата</b></u> - {{ candidate['position'] }}</div>
+            <div><u><b>Навыки:</b></u> {{ candidate['skills'] }}</div>
         </div>
     {% endfor %}
     </div>
